@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int smallestRepunitDivByK(int k) {
+    int r = 0;
+    for (int i = 1; i <= k; i++) {
+        r = (r * 10 + 1) % k;
+        if (r == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    int k;
+    if (cin >> k) {
+        cout << smallestRepunitDivByK(k) << endl;
+    }
+    return 0;
+}
